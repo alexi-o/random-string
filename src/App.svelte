@@ -12,7 +12,7 @@
     if (includeLowercase) characters += "abcdefghijklmnopqrstuvwxyz";
     if (includeUppercase) characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     if (includeNumbers) characters += "0123456789";
-    if (includeSpecialCharacters) characters += "!@#$%^&*()_+-=[]{}|;:,.<>?";
+    if (includeSpecialCharacters) characters += "!@#$%^&*_?";
 
     if (!characters) {
       randomStrings = ["Select at least one character set option"];
