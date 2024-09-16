@@ -14,11 +14,10 @@ A Chrome extension to generate random strings with customizable options. Easily 
 
 ### Main Interface
 
-![Main Interface](screenshots/main-interface.png)
-
-### Results
-
-![Options and Settings](screenshots/results.png)
+<p float="left">
+  <img src="screenshots/main-interface.png" alt="Main Interface" width="300"/>
+  <img src="screenshots/results.png" alt="Options and Settings" width="300"/>
+</p>
 
 ## How to Use
 
