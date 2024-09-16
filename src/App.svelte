@@ -2,10 +2,23 @@
   let randomStrings = [];
   let stringLength = 28;
   let numberOfOutputs = 5;
+  let includeLowercase = true;
+  let includeUppercase = true;
+  let includeNumbers = true;
+  let includeSpecialCharacters = false;
 
   function generateRandomStrings() {
-    const characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let characters = "";
+    if (includeLowercase) characters += "abcdefghijklmnopqrstuvwxyz";
+    if (includeUppercase) characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    if (includeNumbers) characters += "0123456789";
+    if (includeSpecialCharacters) characters += "!@#$%^&*()_+-=[]{}|;:,.<>?";
+
+    if (!characters) {
+      randomStrings = ["Select at least one character set option"];
+      return;
+    }
+
     randomStrings = [];
 
     for (let j = 0; j < numberOfOutputs; j++) {
@@ -36,7 +49,7 @@
 
   <div class="terminal-body">
     <div class="input-container">
-      <label for="stringLength">String Length:</label>
+      <label for="stringLength">Length:</label>
       <input
         id="stringLength"
         type="number"
@@ -47,7 +60,7 @@
     </div>
 
     <div class="input-container">
-      <label>Number of Outputs:</label>
+      <label>Outputs:</label>
       <div class="button-group">
         <button
           on:click={() => setNumberOfOutputs(1)}
@@ -68,6 +81,24 @@
       </div>
     </div>
 
+    <div class="input-container">
+      <label>Options:</label>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" bind:checked={includeLowercase} /> Lowercase
+        </label>
+        <label>
+          <input type="checkbox" bind:checked={includeUppercase} /> Uppercase
+        </label>
+        <label>
+          <input type="checkbox" bind:checked={includeNumbers} /> Numbers
+        </label>
+        <label>
+          <input type="checkbox" bind:checked={includeSpecialCharacters} /> Special
+        </label>
+      </div>
+    </div>
+
     <button on:click={generateRandomStrings}>Generate Strings</button>
 
     <ul>
@@ -80,8 +111,8 @@
 
 <style>
   main {
-    width: 600px;
-    margin: 50px auto;
+    width: 500px;
+    margin: 0 auto;
     border-radius: 5px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
     overflow: hidden;
@@ -141,13 +172,13 @@
   }
 
   label {
-    width: 150px; /* Fixed width to align inputs */
+    width: 150px;
     font-size: 14px;
     color: #888;
     margin-right: 10px;
   }
 
-  input {
+  input[type="number"] {
     flex: 1;
     padding: 5px;
     background-color: #333;
@@ -178,6 +209,18 @@
   .button-group button.numberSelected {
     background-color: #007acc;
     color: #ffffff;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
   button {
