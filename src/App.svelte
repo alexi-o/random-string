@@ -58,15 +58,17 @@
 <main style="--theme-color: {themeColor}">
   <div class="terminal-header">
     <div class="buttons">
-      <button class="button red" on:click={() => setThemeColor("#ff5f56")}
+      <button class="button red" on:click={() => setThemeColor("#b83019")}
       ></button>
-      <button class="button yellow" on:click={() => setThemeColor("#ffbd2e")}
+      <button class="button yellow" on:click={() => setThemeColor("#c6c43d")}
       ></button>
       <button class="button green" on:click={() => setThemeColor("#51bf37")}
       ></button>
+      <button class="button purple" on:click={() => setThemeColor("#b93ec1")}
+      ></button>
     </div>
 
-    <div class="title">Random String Generator</div>
+    <div class="title">Random String</div>
   </div>
 
   <div class="terminal-body">
@@ -151,7 +153,8 @@
 
 <style>
   main {
-    width: 400px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
@@ -205,10 +208,15 @@
     background-color: #51bf37;
   }
 
+  .button.purple {
+    background-color: #b93ec1;
+  }
+
   .title {
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
     color: var(--theme-color);
+    margin-left: 35px;
     font-weight: bold;
     font-size: 14px;
   }
