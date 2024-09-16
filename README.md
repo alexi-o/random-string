@@ -1,47 +1,44 @@
-# Svelte + Vite
+# Random String Generator Extension
 
-This template should help get you started developing with Svelte in Vite.
+A Chrome extension to generate random strings with customizable options. Easily generate strings of various lengths and character sets with a click-to-copy feature.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- Generate random strings with customizable lengths and character sets.
+- Options to include lowercase, uppercase, numbers, and special characters.
+- Select the number of outputs and length of the strings.
+- Change the theme color with the color toggles.
+- Copy generated strings to clipboard with a single click.
 
-## Need an official Svelte framework?
+## Screenshots
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+### Main Interface
 
-## Technical considerations
+![Main Interface](screenshots/main-interface.png)
 
-**Why use this over SvelteKit?**
+### Options and Settings
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+![Options and Settings](screenshots/options-settings.png)
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+### Theme Color Toggle
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+![Theme Color Toggle](screenshots/theme-color-toggle.png)
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+## How to Use
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+1. Open the extension from the Chrome toolbar.
+2. Select the desired options for string generation.
+3. Click "Generate Strings" to create random strings.
+4. Click on any string to copy it to the clipboard.
 
-**Why include `.vscode/extensions.json`?**
+## Installation
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+1. Download or clone this repository.
+2. Open Chrome and navigate to `chrome://extensions/`.
+3. Enable "Developer mode" in the top right corner.
+4. Click "Load unpacked" and select the project directory.
+5. The extension will now appear in your toolbar.
 
-**Why enable `checkJs` in the JS template?**
+## License
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+This project is licensed under the MIT License.
