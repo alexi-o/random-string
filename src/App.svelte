@@ -50,13 +50,22 @@
   <div class="terminal-body">
     <div class="input-container">
       <label for="stringLength">Length:</label>
-      <input
-        id="stringLength"
-        type="number"
-        min="1"
-        max="128"
-        bind:value={stringLength}
-      />
+      <div class="range-container">
+        <input
+          id="stringLength"
+          type="number"
+          min="1"
+          max="128"
+          bind:value={stringLength}
+        />
+        <input
+          type="range"
+          min="1"
+          max="128"
+          bind:value={stringLength}
+          class="slider"
+        />
+      </div>
     </div>
 
     <div class="input-container">
@@ -111,7 +120,7 @@
 
 <style>
   main {
-    width: 500px;
+    width: 400px;
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
@@ -167,29 +176,51 @@
 
   .input-container {
     display: flex;
-    align-items: center;
-    margin: 10px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 300px;
   }
 
   label {
-    width: 150px;
     font-size: 14px;
     color: #51bf37;
-    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+
+  .range-container {
+    width: 100%;
   }
 
   input[type="number"] {
-    flex: 1;
+    width: 100%;
     padding: 5px;
     background-color: #333;
     color: #51bf37;
     border: 1px solid #555;
     border-radius: 4px;
+    margin-bottom: 5px;
+  }
+
+  .slider {
+    width: 100%;
+    appearance: none;
+    height: 8px;
+    border-radius: 5px;
+    background: #51bf37;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.15s ease-in-out;
+  }
+
+  .slider:hover {
+    opacity: 1;
   }
 
   .button-group {
     display: flex;
     gap: 10px;
+    margin-top: 5px;
   }
 
   .button-group button {
@@ -215,6 +246,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-top: 5px;
   }
 
   .checkbox-group label {
@@ -234,6 +266,7 @@
     border: none;
     border-radius: 4px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
   }
 
   ul {
