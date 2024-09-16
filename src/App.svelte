@@ -117,8 +117,8 @@
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     font-family: "Courier New", Courier, monospace;
-    background-color: #1e1e1e;
-    color: #cccccc;
+    background-color: #000000;
+    color: #51bf37;
   }
 
   .terminal-header {
@@ -155,14 +155,14 @@
   .title {
     flex-grow: 1;
     text-align: center;
-    color: #cccccc;
+    color: #51bf37;
     font-weight: bold;
     font-size: 14px;
   }
 
   .terminal-body {
     padding: 20px;
-    background-color: #1e1e1e;
+    background-color: #000000;
   }
 
   .input-container {
@@ -174,7 +174,7 @@
   label {
     width: 150px;
     font-size: 14px;
-    color: #888;
+    color: #51bf37;
     margin-right: 10px;
   }
 
@@ -182,7 +182,7 @@
     flex: 1;
     padding: 5px;
     background-color: #333;
-    color: #cccccc;
+    color: #51bf37;
     border: 1px solid #555;
     border-radius: 4px;
   }
@@ -195,7 +195,7 @@
   .button-group button {
     padding: 5px 10px;
     background-color: #444;
-    color: #fff;
+    color: #51bf37;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -207,8 +207,8 @@
   }
 
   .button-group button.numberSelected {
-    background-color: #007acc;
-    color: #ffffff;
+    background-color: #51bf37;
+    color: #000000;
   }
 
   .checkbox-group {
@@ -221,6 +221,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    color: #51bf37;
   }
 
   button {
@@ -228,8 +229,8 @@
     padding: 10px 20px;
     cursor: pointer;
     font-size: 14px;
-    color: #ffffff;
-    background-color: #007acc;
+    color: #000000;
+    background-color: #51bf37;
     border: none;
     border-radius: 4px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
@@ -248,6 +249,6 @@
     word-break: break-all;
     background-color: #262626;
     border-radius: 4px;
-    color: #9cdcfe;
+    color: #51bf37;
   }
 </style>
