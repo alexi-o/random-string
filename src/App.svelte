@@ -41,6 +41,9 @@
     try {
       await navigator.clipboard.writeText(text);
       copyMessage = "Copied to clipboard!";
+      setTimeout(() => {
+        copyMessage = "";
+      }, 1000);
     } catch (err) {
       copyMessage = "Failed to copy!";
     }
@@ -126,7 +129,9 @@
       {#each randomStrings as string, index}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-        <li on:click={() => copyToClipboard(string)}>{string}</li>
+        <li class="random-string" on:click={() => copyToClipboard(string)}>
+          {string}
+        </li>
       {/each}
     </ul>
     {#if copyMessage}
@@ -164,6 +169,10 @@
     height: 12px;
     border-radius: 50%;
     display: inline-block;
+  }
+
+  .random-string {
+    cursor: pointer;
   }
 
   .button.red {
