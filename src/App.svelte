@@ -6,6 +6,7 @@
   let includeUppercase = true;
   let includeNumbers = true;
   let includeSpecialCharacters = false;
+  let copyMessage = "";
 
   function generateRandomStrings() {
     let characters = "";
@@ -34,6 +35,15 @@
 
   function setNumberOfOutputs(count) {
     numberOfOutputs = count;
+  }
+
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copyMessage = "Copied to clipboard!";
+    } catch (err) {
+      copyMessage = "Failed to copy!";
+    }
   }
 </script>
 
@@ -69,6 +79,7 @@
     </div>
 
     <div class="input-container">
+      <!-- svelte-ignore a11y-label-has-associated-control -->
       <label>Outputs:</label>
       <div class="button-group">
         <button
@@ -91,6 +102,7 @@
     </div>
 
     <div class="input-container">
+      <!-- svelte-ignore a11y-label-has-associated-control -->
       <label>Options:</label>
       <div class="checkbox-group">
         <label>
@@ -112,9 +124,14 @@
 
     <ul>
       {#each randomStrings as string, index}
-        <li key={index}>{string}</li>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+        <li on:click={() => copyToClipboard(string)}>{string}</li>
       {/each}
     </ul>
+    {#if copyMessage}
+      <div class="copy-message">{copyMessage}</div>
+    {/if}
   </div>
 </main>
 
