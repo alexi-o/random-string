@@ -7,6 +7,7 @@
   let includeNumbers = true;
   let includeSpecialCharacters = false;
   let copyMessage = "";
+  let themeColor = "#51bf37";
 
   function generateRandomStrings() {
     let characters = "";
@@ -48,14 +49,20 @@
       copyMessage = "Failed to copy!";
     }
   }
+
+  function setThemeColor(color) {
+    themeColor = color;
+  }
 </script>
 
-<main>
+<main style="--theme-color: {themeColor}">
   <div class="terminal-header">
     <div class="buttons">
-      <span class="button red"></span>
-      <span class="button yellow"></span>
-      <span class="button green"></span>
+      <span class="button red" on:click={() => setThemeColor("#ff5f56")}></span>
+      <span class="button yellow" on:click={() => setThemeColor("#ffbd2e")}
+      ></span>
+      <span class="button green" on:click={() => setThemeColor("#51bf37")}
+      ></span>
     </div>
     <div class="title">Random String Generator</div>
   </div>
@@ -149,7 +156,7 @@
     overflow: hidden;
     font-family: "Courier New", Courier, monospace;
     background-color: #000000;
-    color: #51bf37;
+    color: var(--theme-color);
   }
 
   .terminal-header {
@@ -184,13 +191,13 @@
   }
 
   .button.green {
-    background-color: #27c93f;
+    background-color: #51bf37;
   }
 
   .title {
     flex-grow: 1;
     text-align: center;
-    color: #51bf37;
+    color: var(--theme-color);
     font-weight: bold;
     font-size: 14px;
   }
@@ -210,7 +217,7 @@
 
   label {
     font-size: 14px;
-    color: #51bf37;
+    color: var(--theme-color);
     margin-bottom: 5px;
   }
 
@@ -222,7 +229,7 @@
     width: 100%;
     padding: 5px;
     background-color: #333;
-    color: #51bf37;
+    color: var(--theme-color);
     border: 1px solid #555;
     border-radius: 4px;
     margin-bottom: 5px;
@@ -233,7 +240,7 @@
     appearance: none;
     height: 8px;
     border-radius: 5px;
-    background: #51bf37;
+    background: var(--theme-color);
     outline: none;
     opacity: 0.7;
     transition: opacity 0.15s ease-in-out;
@@ -246,13 +253,12 @@
   .button-group {
     display: flex;
     gap: 10px;
-    margin-top: 5px;
   }
 
   .button-group button {
     padding: 5px 10px;
     background-color: #444;
-    color: #51bf37;
+    color: var(--theme-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -264,7 +270,7 @@
   }
 
   .button-group button.numberSelected {
-    background-color: #51bf37;
+    background-color: var(--theme-color);
     color: #000000;
   }
 
@@ -272,23 +278,21 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin-top: 5px;
   }
 
   .checkbox-group label {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: #51bf37;
+    color: var(--theme-color);
   }
 
   button {
-    margin-top: 20px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 14px;
     color: #000000;
-    background-color: #51bf37;
+    background-color: var(--theme-color);
     border: none;
     border-radius: 4px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
@@ -308,6 +312,12 @@
     word-break: break-all;
     background-color: #262626;
     border-radius: 4px;
-    color: #51bf37;
+    color: var(--theme-color);
+  }
+
+  .copy-message {
+    color: var(--theme-color);
+    font-size: 14px;
+    text-align: center;
   }
 </style>
