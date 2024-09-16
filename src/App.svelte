@@ -58,12 +58,14 @@
 <main style="--theme-color: {themeColor}">
   <div class="terminal-header">
     <div class="buttons">
-      <span class="button red" on:click={() => setThemeColor("#ff5f56")}></span>
-      <span class="button yellow" on:click={() => setThemeColor("#ffbd2e")}
-      ></span>
-      <span class="button green" on:click={() => setThemeColor("#51bf37")}
-      ></span>
+      <button class="button red" on:click={() => setThemeColor("#ff5f56")}
+      ></button>
+      <button class="button yellow" on:click={() => setThemeColor("#ffbd2e")}
+      ></button>
+      <button class="button green" on:click={() => setThemeColor("#51bf37")}
+      ></button>
     </div>
+
     <div class="title">Random String Generator</div>
   </div>
 
@@ -169,6 +171,15 @@
   .buttons {
     display: flex;
     gap: 5px;
+  }
+
+  .buttons .button {
+    all: unset;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
   }
 
   .button {
