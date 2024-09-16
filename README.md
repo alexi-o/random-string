@@ -16,13 +16,9 @@ A Chrome extension to generate random strings with customizable options. Easily 
 
 ![Main Interface](screenshots/main-interface.png)
 
-### Options and Settings
+### Results
 
-![Options and Settings](screenshots/options-settings.png)
-
-### Theme Color Toggle
-
-![Theme Color Toggle](screenshots/theme-color-toggle.png)
+![Options and Settings](screenshots/results.png)
 
 ## How to Use
 
